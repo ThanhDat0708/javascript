@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <div class="container">
+        <div class="group">
+            <input id="input"type="text" placeholder="Nhập dữ liệu vào đây">
+            <button id="btnAdd">Thêm</button>
+        </div>
+        <ul class="list">
+             <!-- <li>
+            <span onclick="dele()">xóa</span>
+            </li> 
+            -->
+        </ul>
+    </div>
+    <script>
+        const input = document.getElementById("input")
+        const btnAdd = document.getElementById('btnAdd')
+        const ulEle = document.querySelector('.list')
+        btnAdd.addEventListener("click", function(ev){
+            const inputValue = input.value 
+            if(!inputValue)
+        {
+            alert('vui long nhap du lieu');
+            input.focus()
+            return 
+        }
+        // tạo thẻ 
+            const spanEle = document.createElement('span')
+            spanEle.innerText = inputValue
+            const btnDel = document.createElement('button')
+            btnDel.innerText = "Xóa"
+        // Tạo thẻ và thêm các thẻ trên vào <li>
+            const liEle = document.createElement("li")
+            liEle.append(spanEle, btnDel)
+            //Thêm vào đâu thẻ <li>
+               ulEle.prepend(liEle)
+            btnDel.onclick = function()
+            {
+                liEle.remove();
+            }
+            
+        });
+        
+    </script>
+</body>
+</html>

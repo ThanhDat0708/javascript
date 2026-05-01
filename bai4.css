@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.tooltip-container {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+.tooltip-container .bubble {
+  color: white;
+  height: 35px;
+  width: 35px;
+  background-color: blue;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.tooltip-container .tooltip {
+  background-color: gray;
+  max-width: 200px;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 45px;
+  display: none;
+}
+.tooltip-container .tooltip::after {
+  box-sizing: border-box;
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: -10px;
+  left: 12px;
+  border: 5px solid transparent;
+  border-top-color: gray;
+}
+.tooltip-container .tooltip.show {
+  display: flex;
+}/*# sourceMappingURL=bai4.css.map */

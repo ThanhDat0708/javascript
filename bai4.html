@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bai4.css">
+</head>
+<body>
+    <h1> Nội dung chính</h1>
+<div class="tooltip-container">
+    <span onclick="onOffToolTip(event)" class="bubble">?</span>
+    <div class="tooltip">
+        Đây là nội dung hiển thị khi click vào nút ?.
+    </div>
+</div>
+    <script>
+        for(let i=0;i<50;i++)
+        document.write(`<h1>Nội dung chính ${i+1}</h1>`);
+        function onOffToolTip(ev)
+        {
+            const bubble = ev.target;
+            const tooltip = bubble.nextElementSibling;
+            tooltip.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

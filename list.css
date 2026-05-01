@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: aqua;
+}
+.container .group {
+  border-radius: 50%;
+  text-align: center;
+}
+.container .group input {
+  text-align: center;
+  width: 200px;
+}
+.container .group button {
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent solid;
+}/*# sourceMappingURL=list.css.map */

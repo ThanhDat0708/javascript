@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: auto;
+  box-sizing: border-box;
+}
+
+.popup-bg {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-bg.show {
+  display: flex;
+}
+.popup-bg .popup {
+  background-color: white;
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+}
+.popup-bg .popup .popup-header {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */

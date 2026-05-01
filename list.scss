@@ -1,0 +1,24 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: aqua;
+
+    .group{
+    border-radius: 50%;
+    text-align: center;
+         input{
+        text-align: center;
+        width:200px;
+        }
+        button{
+            cursor: pointer;
+            background-color: transparent;
+            border: transparent solid;
+        }
+    }
+    
+
+}

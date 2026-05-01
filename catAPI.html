@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ảnh mèo ngẫu nhiên</title>
+    <style>
+        #loading{
+            position: fixed;
+            top:0;
+            left:0;
+            width:100vw;
+            height:100vh;
+            background-color: rgb(123, 119, 119);
+            display:none;
+            align-items: center;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+<body>
+        <button onclick="meow()">Nhấn vào đây để hiện ảnh mèo</button>
+        <div>
+            <img src="" alt="anhmeo">
+        </div>
+        <div id="loading">
+            Đang tải.....
+        </div>
+        <script>
+             const url =" https://api.thecatapi.com/v1/images/search";
+            const apikey = "live_abulHayZU0WrnHDun8A2oIW6HuG6qXPYkGuV6Q1HMe1SY87w5xGZQOwprFWxUSBh";
+            const imgEle = document.querySelector('img');
+            const loadingEle = document.getElementById('loading');
+            function loading(isShow = true)
+            {
+            //     if(isShow)
+            // {
+            //     loadingEle.style.display = 'flex';
+            // }
+            // else{
+            //     loadingEle.style.display = '';
+            // }
+            loadingEle.style.display = isShow ? 'flex':'';
+            }
+            function meow()
+            {
+                //bật loading
+                loading(true);
+               fetch(url, {
+                headers:{
+                    'x-api-key' : apikey
+                }
+               })
+               .then(data => data.json())
+               .then(json => {
+                console.log(json);
+                imgEle.setAttribute('src',json[0].url);
+                //ẩn loading
+                loading(false);
+               });
+               console.log(1);
+          
+            }
+        </script>
+</body>
+</html>
